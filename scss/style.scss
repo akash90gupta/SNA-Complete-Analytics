@@ -1,0 +1,75 @@
+@import "compass/css3";
+
+@import url('http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
+
+.pcs:after { content: " pcs"; }
+.cur:before { content: "$"; }
+.per:after { content: "%"; }
+// --------------------------
+* { box-sizing: border-box; }
+body { padding: .2em 2em; }
+// Table
+table {
+  width: 100%;
+  th { text-align: left; border-bottom: 1px solid #ccc;}
+  th, td { padding: .4em; }
+}
+
+// fold table 
+table.fold-table {
+  > tbody {
+    // view segment
+    > tr.view {
+      td, th {cursor: pointer;}
+      td:first-child, 
+      th:first-child { 
+        position: relative;
+        padding-left:20px;
+        &:before {
+          position: absolute;
+          top:50%; left:5px;
+          width: 9px; height: 16px;
+          margin-top: -8px;
+          font: 16px fontawesome;
+          color: #999;
+          content: "\f0d7";
+          transition: all .3s ease;
+        }
+      }
+      &:nth-child(4n-1) { background: #eee; }
+      &:hover { background: #000; }
+      &.open {
+        background: tomato;
+        color: white;
+        td:first-child, th:first-child {
+          &:before {
+            transform: rotate(-180deg);
+            color: #333;
+          }
+        }
+      }
+    }
+  
+    // fold segment
+    > tr.fold {
+      display: none;
+      &.open { display:table-row; }
+    }
+  }
+}
+
+
+
+// fold content 
+.fold-content {
+  padding: .5em;
+  h3 { margin-top:0; }
+  > table {
+    border: 2px solid #ccc;
+    > tbody {
+      tr:nth-child(even) {
+        background: #eee;
+      }
+    }
+  }
+}

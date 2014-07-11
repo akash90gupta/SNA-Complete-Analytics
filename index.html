@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Student Analytics</title>
+
+  <script src="js/prefixfree.min.js"></script>
+  <script src="js/modernizr.js"></script>
+  <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+ <script type="text/javascript" src="tipsy.js">
+ <script src="js/index.js"></script>
+</head>
+
+<body>
+
+   <nav>
+  <ul>
+    <li class="active"><a href="#">Table</a></li>
+    <li ><a href="collaboration.html">Network</a></li>
+  </ul>
+</nav>
+   <h1><b>Student Analytics</b></h1>
+    <table class="fold-table">
+  <thead>
+    <tr>
+        <th><b>Student Name</b></th>
+        <th><a id="tableheadings" href="#" title="This score represents how aware other students are of a particular student. If a particular student has a high popularity score, he/she is likely to perform better. "><b> Popularity Score [IN]</b></a></th>
+        <th><a id="tableheadings" href="#" title="This score represents how often a student reaches out to another students. If a student reaches out more to other students, he is likely to perform better."><b>Influence Score [OUT]</b></a></th>
+        <th><a id="tableheadings" href="#" title="This score represents the value of understanding derived from other students in this students work. The higher the value received, the more likely is that student to perform better. "><b>Tags Received [IN]</b></a></th>
+        <th><a id="tableheadings" href="#" title="This score represents the value of understanding assigned to other students for their work by this student. The lower the value assigned to other students, the more likely is that students to perform better. "><b>Tags Assigned [OUT]</b></a></th>
+        <th><a id="tableheadings" href="#" title="This score represents the frequency with which a student speaks with people outside the classroom about the subject matter. The more he/she speaks, the longer the posts, but lesser the value of understanding received in post"><b>External Network</b></a></th>
+        <th><a id="tableheadings" href="#" title="Curent grade in classroom"><b>Current Grade</b></a></th>
+    </tr>
+  </thead>
+      
+      <!--Student 1-->
+      
+  <tbody>
+    <tr class="view">
+      <td>Student 1</td>
+      <td class="popularity">31</td>
+      <td class="influence">22</td>
+      <td class="tagsin">35</td>
+      <td class="tagsout">36</td>
+      <td class="externalnetwork">9</td>
+      <td>A</td>
+     
+    </tr>
+    <tr class="fold">
+      <td colspan="7">
+        <div class="fold-content">
+          <table>
+            <thead>
+              <tr>
+                  <th>Assignment</th>
+                  <th>Number of posts</th>
+                  <th>Total Word Count</th>
+                  <th>Vocabulary Used</th>
+                  <th>Post</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="response">
+                <td class>COSMOS: TV Series</td>
+                <td>2</td>
+                <td>137</td>
+                <td>Newton, Forces, Gravity</td>
+                <td>I found the section about Halley's Comet particularly interesting. The orbits of comets are quite different from the planet's orbits and are fascinating to me. Planet's orbits are ellipses and so are comet's orbits, however, a comet's is more elongated making it so the traveling speed range is larger. At its farthest point from the sun the comet moves slowly and it slingshots back, rocketing towards the sun at a faster and faster speed. Edmund Halley was one of few scientists to see the comet as a wonder instead of a threat or premonition. I think his work and aid and involvement with other scientists of his time has been rather understated. How he charted the comet's path through the years to prove that is was indeed the same comet that returned after one orbit was impressive.</td>
+              </tr>
+            </tbody>
+          </table>          
+        </div>
+      </td>
+    </tr>
+      
+      <!--Student 2-->
+      
+    <tbody>
+    <tr class="view">
+      <td>Student 2</td>
+      <td class="popularity">29</td>
+      <td class="influence">25</td>
+       <td class="tagsin">27</td>
+      <td class="tagsout">34</td>
+      <td class="externalnetwork">10</td>
+      <td>A-</td>
+     
+    </tr>
+    <tr class="fold">
+      <td colspan="7">
+        <div class="fold-content">
+             <table>
+            <thead>
+              <tr>
+                  <th>Assignment</th>
+                  <th>Number of posts</th>
+                  <th>Total Word Count</th>
+                  <th>Vocabulary Used</th>
+                  <th>Post</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="response">
+                <td>COSMOS: TV Series</td>
+                <td>1</td>
+                <td>169</td>
+                <td>Halley, comet, discovery </td>
+                <td> I have always, for lack of a better phrase, thought Edmund Halley was an incredibly cool guy. He was the one who made the most impression for me because of his constant study of what was called Halley's Comet. I thought it was incredible that while everyone else was a little hesitant to really investigate the strange fire-ball that went across the sky after determined increments of time, he was a tiny boy and he was incredibly curious about it. He was the one who really went after it and discovered what it was. He's mapped it out and figured out what its schedule was. I just thought that that was incredible: that most grown adults are didn't think about Halley's Comet as a gigantic discovery and a scientific-mathematical study. As a child he watched it fly across the sky once. He was the only adult, at 49, who was absolutely fascinated by such a specimen, especially when the specimen could not always be seen and only came around every 75 years.</td>
+              </tr>
+            </tbody>
+          </table>          
+        </div>
+      </td>
+    </tr>
+        
+        <!--Student 3-->
+        
+         <tbody>
+    <tr class="view">
+        <td>Student 3</td>
+      <td class="popularity">29</td>
+      <td class="influence">18</td>
+       <td class="tagsin">34</td>
+      <td class="tagsout">32</td>
+      <td class="externalnetwork">6</td>
+      <td>B+</td>
+     
+    </tr>
+    <tr class="fold">
+      <td colspan="7">
+        <div class="fold-content">
+          <table>
+            <thead>
+              <tr>
+                  <th>Assignment</th>
+                  <th>Number of posts</th>
+                  <th>Total Word Count</th>
+                  <th>Vocabulary Used</th>
+                  <th>Post</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="response">
+                <td>COSMOS: TV Series</td>
+                <td>2</td>
+                <td>62</td>
+                <td>Einstein, science</td>
+                <td>I like Albert Einstein because he was really important for the evolution of science. He is well known throughout the world but it is very interesting to hear facts about him that aren't as well known. The way he studied and worked through his problems are very smart and it's cool that work he did many years ago are still used today. </td>
+              </tr>
+            </tbody>
+          </table>          
+        </div>
+      </td>
+    </tr>
+             
+             <!--Student 4-->
+              <tbody>
+    <tr class="view">
+      <td>Student 4</td>
+      <td class="popularity">30</td>
+      <td class="influence">22</td>
+       <td class="tagsin">34</td>
+      <td class="tagsout">36</td>
+      <td class="externalnetwork">3</td>
+      <td>A-</td>
+     
+    </tr>
+    <tr class="fold">
+      <td colspan="7">
+        <div class="fold-content">
+          <table>
+            <thead>
+              <tr>
+                  <th>Assignment</th>
+                  <th>Number of posts</th>
+                  <th>Total Word Count</th>
+                  <th>Vocabulary Used</th>
+                  <th>Post</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="response">
+                <td>COSMOS: TV Series</td>
+                <td>3</td>
+                <td>79</td>
+                <td>Tyson, science</td>
+                <td>I thought that Neil DrGrasse Tyson resonated with me because of his intrigue in searching far out into the realms of science. While he may have just been the host of the show, he was the one who brought us on the journey through everything explaining it on the way. I have seen videos with him before and I enjoy how he brings a more simple understanding to a lot of the less known about regions of scientific exploration.</td>
+              </tr>
+            </tbody>
+          </table>           
+        </div>
+      </td>
+    </tr>
+                 <!--Student 5--> 
+                  
+                   <tbody>
+    <tr class="view">
+      <td>Student 5</td>
+      <td class="popularity">32</td>
+      <td class="influence">23</td>
+       <td class="tagsin">34</td>
+      <td class="tagsout">33</td>
+      <td class="externalnetwork">1</td>
+      <td>A</td>
+     
+    </tr>
+    <tr class="fold">
+      <td colspan="7">
+        <div class="fold-content">
+          <table>
+            <thead>
+              <tr>
+                  <th>Assignment</th>
+                  <th>Number of posts</th>
+                  <th>Total Word Count</th>
+                  <th>Vocabulary Used</th>
+                  <th>Post</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="response">
+                <td>COSMOS: TV Series</td>
+                <td>3</td>
+                <td>172</td>
+                <td>Tyson, Science, NASA, NYC, Carl Sagan</td>
+                <td>Neil DeGrasse Tyson is a leading American astrophysicist. He studied first at Harvard and then at Columbia University. He has written several books, including Origins: Fourteen Billion Years of Cosmic Evolution, which was based on Origins which was a two part television series he hosted on NOVA. He has been awarded the NASA Distinguished Public Service Medal for his work with NASA. He is an opponent of intelligent design and is the director of the Hayden Planetarium at the American Museum of Natural History in New York City. One of his main goals has been to make science accessible to the every day person and to inspire a renewed interest in science and space exploration. His most infamous trait is that he was a proponent of the removal of Pluto as a planet and headed the effort to remove it. He has been greatly influenced by Carl Sagan and thinks of him as an inspiration, even resurrecting Sagan's television show Cosmos. He has had several honorary titles bestowed upon him, including People Magazine's "Sexiest Scientist Alive" in 2000. </td>
+              </tr>
+            </tbody>
+          </table>          
+        </div>
+      </td>
+    </tr>
+                       
+                       <!--Student 6-->
+                       
+                       
+                        <tbody>
+    <tr class="view">
+      <td>Student 6</td>
+      <td class="popularity">29</td>
+      <td class="influence">22</td>
+       <td class="tagsin">35</td>
+      <td class="tagsout">30</td>
+      <td class="externalnetwork">3</td>
+      <td>A-</td>
+     
+    </tr>
+    <tr class="fold">
+      <td colspan="7">
+        <div class="fold-content">
+          <table>
+            <thead>
+              <tr>
+                  <th>Assignment</th>
+                  <th>Number of posts</th>
+                  <th>Total Word Count</th>
+                  <th>Vocabulary Used</th>
+                  <th>Post</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="response">
+                <td>COSMOS: TV Series</td>
+                <td>1</td>
+                <td>75</td>
+                <td>Halley, comet</td>
+                <td>Edmond Halley was a scientist that discovered the orbit of a comet, Halley's comet. This was important then and has been helpful to the field since then. His son John was with him a lot and John learned about science from him. John would grow up to become a scientist also. This resonated with me because I think it's nice that a father was able to share something he loved with a person he loved.</td>
+              </tr>
+            </tbody>
+          </table>          
+        </div>
+      </td>
+    </tr>
+                            
+                          <!--Student 7-->   
+                             <tbody>
+    <tr class="view">
+      <td>Student 7</td>
+      <td class="popularity">32</td>
+      <td class="influence">24</td>
+       <td class="tagsin">34</td>
+      <td class="tagsout">34</td>
+      <td class="externalnetwork">4</td>
+      <td>A</td>
+     
+    </tr>
+    <tr class="fold">
+      <td colspan="7">
+        <div class="fold-content">
+         <table>
+            <thead>
+              <tr>
+                  <th>Assignment</th>
+                  <th>Number of posts</th>
+                  <th>Total Word Count</th>
+                  <th>Vocabulary Used</th>
+                  <th>Post</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="response">
+                <td>COSMOS: TV Series</td>
+                <td>2</td>
+                <td>77</td>
+                <td>Hooke, gravitation</td>
+                <td>The person who resonated with me was Robert Hooke, but not in a good way. He stuck with me because he tried to take credit for Isaac Newton's work on Gravitation. He is also know for trying to take credit for the works of others also. However, he Isn't ALL bad, he discovered many things including the law of elasticity, which we worked with a little bit. Id like to talk more on Newton's finding on gravitation.</td>
+              </tr>
+            </tbody>
+          </table>          
+        </div>
+      </td>
+    </tr>
+                           <!--Student 8-->      
+                                 
+                                  <tbody>
+    <tr class="view">
+      <td>Student 8</td>
+      <td class="popularity">28</td>
+      <td class="influence">21</td>
+       <td class="tagsin">34</td>
+      <td class="tagsout">38</td>
+      <td class="externalnetwork">6</td>
+      <td>B</td>
+     
+    </tr>
+    <tr class="fold">
+      <td colspan="7">
+        <div class="fold-content">
+          <table>
+            <thead>
+              <tr>
+                  <th>Assignment</th>
+                  <th>Number of posts</th>
+                  <th>Total Word Count</th>
+                  <th>Vocabulary Used</th>
+                  <th>Post</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="response">
+                <td>COSMOS: TV Series</td>
+                <td>3</td>
+                <td>69</td>
+                <td>Newton, Forces, Gravity</td>
+                <td>The characterization of Isaac Newton in COSMOS really stayed with me since the series spent a lot of time on him and discussed his entire lifetime of scientific discoveries. When the series was discussing Newton's curiosities of the natural world as a child, I felt a strong reminiscent connection since when I was younger I spent a lot of time outside wondering why things work the way they do.</td>
+              </tr>
+            </tbody>
+          </table>          
+        </div>
+      </td>
+    </tr>
+                                      
+                           <!--Student 9-->           
+                                    <tbody>
+    <tr class="view">
+      <td>Student 9</td>
+      <td class="popularity">25</td>
+      <td class="influence">19</td>
+       <td class="tagsin">33</td>
+      <td class="tagsout">38</td>
+      <td class="externalnetwork">6</td>
+      <td>B</td>
+     
+    </tr>
+    <tr class="fold">
+      <td colspan="7">
+        <div class="fold-content">
+          <table>
+            <thead>
+              <tr>
+                  <th>Assignment</th>
+                  <th>Number of posts</th>
+                  <th>Total Word Count</th>
+                  <th>Vocabulary Used</th>
+                  <th>Post</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="response">
+                <td>COSMOS: TV Series</td>
+                <td>3</td>
+                <td>28</td>
+                <td>Halley, technology</td>
+                <td>I thought that Edmund Halley's "dark" stars were interesting. The way he found something that he couldn't really see is impressive, especially with the technology he had to use. </td>
+              </tr>
+            </tbody>
+          </table>          
+        </div>
+      </td>
+    </tr>
+                    <!--Student 10-->                       
+                                           
+                                            <tbody>
+    <tr class="view">
+      <td>Student 10</td>
+      <td class="popularity">27</td>
+      <td class="influence">23</td>
+       <td class="tagsin">34</td>
+      <td class="tagsout">30</td>
+      <td class="externalnetwork">7</td>
+      <td>A</td>
+     
+    </tr>
+    <tr class="fold">
+      <td colspan="7">
+        <div class="fold-content">
+         <table>
+            <thead>
+              <tr>
+                  <th>Assignment</th>
+                  <th>Number of posts</th>
+                  <th>Total Word Count</th>
+                  <th>Vocabulary Used</th>
+                  <th>Post</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="response">
+                <td>COSMOS: TV Series</td>
+                <td>1</td>
+                <td>108</td>
+                <td>Halley, comet</td>
+                <td>None of them really resonated with me, but if I had to chose one it would probably be Edmund Halley. I would chose him because not only is he one of the five people I actually knew, but I think he is the coolest. I don't think he personally is cool, but his giant space rock is. Comets are awesome; they're pretty, unique, and his comet is particularly cool because we know exactly when we will see it each time it comes back around. To this day, I still think it's crazy that you can come up with a mathematical equation to calculate things literally out of this world. </td>
+              </tr>
+            </tbody>
+          </table>                
+        </div>
+      </td>
+    </tr>
+                                                
+                        <!--Student 11-->                        
+                                                 <tbody>
+    <tr class="view">
+      <td>Student 11</td>
+      <td class="popularity">30</td>
+      <td class="influence">22</td>
+       <td class="tagsin">37</td>
+      <td class="tagsout">30</td>
+      <td class="externalnetwork">1</td>
+      <td>A</td>
+     
+    </tr>
+    <tr class="fold">
+      <td colspan="7">
+        <div class="fold-content">
+         <table>
+            <thead>
+              <tr>
+                  <th>Assignment</th>
+                  <th>Number of posts</th>
+                  <th>Total Word Count</th>
+                  <th>Vocabulary Used</th>
+                  <th>Post</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="response">
+                <td>COSMOS: TV Series</td>
+                <td>2</td>
+                <td>137</td>
+                <td>Newton, Forces, Gravity</td>
+                <td>Isaac Newton is one of the greatest scientists in the world of the discoveries and inventions. He discovered the gravity of the planet, and he invented the math method calculus picture  </td>
+              </tr>
+            </tbody>
+          </table>          
+        </div>
+      </td>
+    </tr>
+</table> 
+    
+  <script src="js/index.js"></script>
+  
+   <script>   
+$(document).ready(function(){
+  $('nav li').click(function(){
+    $('nav li.active').removeClass('active');
+    $(this).addClass('active');
+  });
+});
+              
+    </script>
+
+      <style>
+/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-family: sans-serif; /* 1 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+    margin: 0;
+    c;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b,
+strong {
+    font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+pre {
+    white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+
+img {
+    border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 2 */
+    margin: 0; /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+</style>
+
+    <style>
+@import url("http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+.pcs:after {
+  content: " pcs";
+}
+
+.cur:before {
+  content: "$";
+}
+
+.per:after {
+  content: "%";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: .2em 2em;
+}
+
+table {
+  width: 100%;
+}
+table th {
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+table th, table td {
+  padding: .4em;
+}
+
+table.fold-table > tbody > tr.view td, table.fold-table > tbody > tr.view th {
+  cursor: pointer;
+}
+table.fold-table > tbody > tr.view td:first-child,
+table.fold-table > tbody > tr.view th:first-child {
+  position: relative;
+  padding-left: 20px;
+}
+table.fold-table > tbody > tr.view td:first-child:before,
+table.fold-table > tbody > tr.view th:first-child:before {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  width: 9px;
+  height: 16px;
+  margin-top: -8px;
+  font: 16px fontawesome;
+  color: rgb(36, 38, 39);
+  content: "\f0d7";
+  transition: all .3s ease;
+}
+table.fold-table > tbody > tr.view:nth-child(4n-1) {
+  background: rgb(131, 129, 129);
+}
+table.fold-table > tbody > tr.view:hover {
+  background: #038680;
+}
+table.fold-table > tbody > tr.view.open {
+  background: #714b8d;
+  color: white;
+}
+table.fold-table > tbody > tr.view.open td:first-child:before, table.fold-table > tbody > tr.view.open th:first-child:before {
+  transform: rotate(-180deg);
+  color: #6195b1;
+}
+table.fold-table > tbody > tr.fold {
+  display: none;
+}
+table.fold-table > tbody > tr.fold.open {
+  display: table-row;
+}
+
+.fold-content {
+  padding: .5em;
+}
+.fold-content h3 {
+  margin-top: 0;
+}
+.fold-content > table {
+  border: 2px solid #ccc;
+}
+.fold-content > table > tbody tr:nth-child(odd) {
+  background: #c3bbbb;
+}
+
+.collaboration{
+            float: right;
+            font: 16px fontawesome;
+}
+            
+
+.response{font-size: 12px;}
+        
+        
+.tableview{
+text-decoration: none;
+border: solid;
+}
+        
+        /*nav bar */
+        
+      *{
+  margin: 0;
+  padding: 0;
+  font: 100% "helvetica neue", helvetica, tahoma, sans-serif;
+}
+
+body{
+  background: #f0f0f0;
+}
+
+nav{
+  text-align: center;
+}
+
+nav ul{
+  background: #038680;
+  border-radius: 3px;
+  padding: 12px;
+  list-style: none;
+}
+
+nav li{
+  /* Height is needed because ".active:after" would otherwise expand the height and make the navigation look extremely stupid */
+  height: 37px;
+  display: inline-block;
+  border-right: 5px solid rgba(0,0,0,.1);
+  padding: 4px 15px;
+}
+
+nav li:first-of-type{
+  border-left: 5px solid rgba(0,0,0,.1);
+}
+
+nav a{
+  display: block;
+  border-bottom: 1px solid transparent;
+  padding: 4px;
+  font-family: sans-serif;
+  font-size: 120%;
+  text-decoration: none;
+  color: rgba(255,255,255,.7);
+}
+
+[type="text"]{
+  width: 100px;
+  background: rgba(255,255,255,.9);
+  display: block;
+  margin-bottom: 1px;
+  border: 0;
+  padding: 4px 4px;
+  font-size: 75%;
+  color: #444;
+}
+
+nav li:not(.active):hover a{
+  border-bottom: 1px solid rgba(255,255,255,.5);
+  color: rgba(255,255,255,.9);
+}
+
+nav .active a{
+  color: white;
+border-bottom: 2px solid rgba(255, 255, 255, 0.51);
+}
+
+nav .active:after{
+  content: '';
+  width: 0;
+  height: 0;
+  display: block;
+  position: relative;
+  margin: 14px auto4
+}    
+        
+body {
+  line-height: 25px;
+  margin: 0;
+}
+
+
+section {
+  float: left;
+  padding: 1%;
+  margin-right: 1%;
+}
+
+.sticky {
+  position: relative;
+  top: 0;
+}
+        
+   .h2{
+   color:white;
+    text-align: center;
+   }     
+        
+        /* NEW buttons */ 
+        
+         .imagecontainer{
+        width: 70%;
+        float: left;
+       padding:1px;
+   border:4px solid #038680;
+   background-color:black;
+        }
+        
+        #buttons{
+   text-align: center;
+   margin-top: 0 auto;
+}
+
+.btn2{
+   width: 200px;
+   height: 60px;
+   border:3px solid #038680;
+   background-color: #f1efec;
+   font-size: 17px;
+   color:#038680;
+   text-transform: uppercase;
+   font-family: 'Montserrat', sans-serif;
+   margin-top: 10px;
+   margin-right: 30px;
+   outline: none 
+   -webkit-transition: 0.7s;
+   -moz-transition: 0.7s;
+   -ms-transition: 0.7s;
+   -o-transition: 0.7s;
+   transition: 0.7s;
+}
+
+.btn2:hover{
+      background-color: #038680;
+      border:none;
+      color:white;
+      -webkit-transition: .4s;
+      -moz-transition: .4s;
+      -ms-transition: .4s;
+      -o-transition: .4s;
+      transition: .4s;
+      -webkit-transform: translateY(10%);
+      -moz-transform: translateY(10%);
+      -ms-transform: translateY(10%);
+      transform: translateY(10%);
+}
+        
+        .btn2 a {
+               text-decoration: none;
+                color: inherit;3
+        }
+               
+        
+        #tableheadings{text-decoration: none;
+        color: black;}
+        
+        
+        [title]{
+	position:relative;
+}
+[title]:after{
+	content:attr(title);
+	color:#fff;
+	background:rgba(51,51,51,0.75);
+	padding:5px;
+	position:absolute;
+    width:15em; 
+	opacity:0;
+    font-size: 13px;
+    font-family: inherit;
+	bottom:100%;
+	-webkit-transition:0.25s linear opacity;
+}
+[title]:hover:after{
+	left:5px;
+	opacity:1;
+}
+</style>
+</body>
+</html>

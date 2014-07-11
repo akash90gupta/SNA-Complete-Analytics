@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script src="js/prefixfree.min.js"></script>
+  <script src="js/modernizr.js"></script>
+  <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+  <script src="js/index.js"></script>
+  <title>Student Analyics</title>
+    
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a href="index.html">Table</a></li>
+    <li class="active"><a href="#">Network</a></li>
+  </ul>
+</nav>
+    <h1>Influence Visualization </h1>
+    <p class="explain" >The larger the node, the more influential the student,i.e. the more he/she reaches out to other students. <br>
+   Greater the influence score of a student, the more he/she collaborates and more likely that student would perform better.  </p>
+    <img src="ucinet-vizualizations/Influence.png" class="imagecontainer">
+  <div id="buttons">
+          <button class="btn2"> <a href="popularity.html">Popularity</a> </button>
+          <button class="btn2"> <a href="#">Influence</a> </button>
+          <button class="btn2"> <a href="performance.html">Performance</a></button>
+          <button class="btn2"> <a href="tagsout.html">Tags Out</a> </button>
+          <button class="btn2"> <a href="tagsin.html">Tags In </a> </button>
+          <button class="btn2"> <a href="collaboration.html">Full Network</a> </button>
+         </div>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
+    <script>     
+$(document).ready(function(){
+  $('nav li').click(function(){
+    $('nav li.active').removeClass('active');
+    $(this).addClass('active');
+  });
+});
+    </script> 
+    
+    <style>
+/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+[hidden] {
+    display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+    font-family: sans-serif; /* 1 */
+    -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+    margin: 0;
+    c;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b,
+strong {
+    font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+    font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+pre {
+    white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+
+img {
+    border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    border: 0; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 2 */
+    margin: 0; /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+    line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button; /* 2 */
+    cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box; /* 2 */
+    box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+    overflow: auto; /* 1 */
+    vertical-align: top; /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+</style>
+
+    <style>
+@import url("http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+.pcs:after {
+  content: " pcs";
+}
+
+.cur:before {
+  content: "$";
+}
+
+.per:after {
+  content: "%";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: .2em 2em;
+}
+
+table {
+  width: 100%;
+}
+table th {
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+table th, table td {
+  padding: .4em;
+}
+
+table.fold-table > tbody > tr.view td, table.fold-table > tbody > tr.view th {
+  cursor: pointer;
+}
+table.fold-table > tbody > tr.view td:first-child,
+table.fold-table > tbody > tr.view th:first-child {
+  position: relative;
+  padding-left: 20px;
+}
+table.fold-table > tbody > tr.view td:first-child:before,
+table.fold-table > tbody > tr.view th:first-child:before {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  width: 9px;
+  height: 16px;
+  margin-top: -8px;
+  font: 16px fontawesome;
+  color: rgb(36, 38, 39);
+  content: "\f0d7";
+  transition: all .3s ease;
+}
+table.fold-table > tbody > tr.view:nth-child(4n-1) {
+  background: rgb(131, 129, 129);
+}
+table.fold-table > tbody > tr.view:hover {
+  background: #66a6cb;
+}
+table.fold-table > tbody > tr.view.open {
+  background: tomato;
+  color: white;
+}
+table.fold-table > tbody > tr.view.open td:first-child:before, table.fold-table > tbody > tr.view.open th:first-child:before {
+  transform: rotate(-180deg);
+  color: #6195b1;
+}
+table.fold-table > tbody > tr.fold {
+  display: none;
+}
+table.fold-table > tbody > tr.fold.open {
+  display: table-row;
+}
+
+.fold-content {
+  padding: .5em;
+}
+.fold-content h3 {
+  margin-top: 0;
+}
+.fold-content > table {
+  border: 2px solid #ccc;
+}
+.fold-content > table > tbody tr:nth-child(odd) {
+  background: #c3bbbb;
+}
+
+.collaboration{
+            float: right;
+            font: 16px fontawesome;
+}
+            
+           
+.tableview{
+text-decoration: none;
+border: solid;
+}
+        
+        /*nav bar */
+        
+      *{
+  margin: 0;
+  padding: 0;
+  font: 100% "helvetica neue", helvetica, tahoma, sans-serif;
+}
+
+body{
+  background: #f0f0f0;
+}
+
+nav{
+  text-align: center;
+}
+
+nav ul{
+  background: #038680;
+  border-radius: 3px;
+  padding: 12px;
+  list-style: none;
+}
+
+nav li{
+  /* Height is needed because ".active:after" would otherwise expand the height and make the navigation look extremely stupid */
+  height: 37px;
+  display: inline-block;
+  border-right: 5px solid rgba(0,0,0,.1);
+  padding: 4px 15px;
+}
+
+nav li:first-of-type{
+  border-left: 5px solid rgba(0,0,0,.1);
+}
+
+nav a{
+  display: block;
+  border-bottom: 1px solid transparent;
+  padding: 4px;
+  font-family: sans-serif;
+  font-size: 120%;
+  text-decoration: none;
+  color: rgba(255,255,255,.7);
+}
+
+[type="text"]{
+  width: 100px;
+  background: rgba(255,255,255,.9);
+  display: block;
+  margin-bottom: 1px;
+  border: 0;
+  padding: 4px 4px;
+  font-size: 75%;
+  color: #444;
+}
+
+nav li:not(.active):hover a{
+  border-bottom: 1px solid rgba(255,255,255,.5);
+  color: rgba(255,255,255,.9);
+}
+
+nav .active a{
+  color: white;
+border-bottom: 2px solid rgba(255, 255, 255, 0.51);
+}
+
+nav .active:after{
+  content: '';
+  width: 0;
+  height: 0;
+  display: block;
+  position: relative;
+  margin: 14px auto4
+}    
+        
+body {
+  line-height: 25px;
+  margin: 0;
+}
+
+
+section {
+  float: left;
+  padding: 1%;
+  margin-right: 1%;
+}
+
+.sticky {
+  position: relative;
+  top: 0;
+}
+        
+   .h2{
+   color:white;
+    text-align: center;
+   }     
+        
+        /* NEW buttons */ 
+        
+         .imagecontainer{
+        width: 70%;
+        float: left;
+       padding:1px;
+   border:4px solid #038680;
+   background-color:black;
+        }
+        
+        #buttons{
+   text-align: center;
+   margin-top: 0 auto;
+}
+
+.btn2{
+   width: 200px;
+   height: 60px;
+   border:3px solid #038680;
+   background-color: #f1efec;
+   font-size: 17px;
+   color:#038680;
+   text-transform: uppercase;
+   font-family: 'Montserrat', sans-serif;
+   margin-top: 10px;
+   margin-right: 30px;
+   outline: none;
+   -webkit-transition: 0.7s;
+   -moz-transition: 0.7s;
+   -ms-transition: 0.7s;
+   -o-transition: 0.7s;
+   transition: 0.7s;
+}
+
+.btn2:hover{
+      background-color: #038680;
+      border:none;
+      color:white;
+      -webkit-transition: .4s;
+      -moz-transition: .4s;
+      -ms-transition: .4s;
+      -o-transition: .4s;
+      transition: .4s;
+      -webkit-transform: translateY(10%);
+      -moz-transform: translateY(10%);
+      -ms-transform: translateY(10%);
+      transform: translateY(10%);
+}
+        
+        .btn2 a {
+               text-decoration: none;
+                color: inherit;
+        }
+        
+         .explain{
+        line-height: 2em;}
+                
+</style>
+</body>
+</html>
